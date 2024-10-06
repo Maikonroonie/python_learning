@@ -1,0 +1,21 @@
+def powitanie():
+    print("hej probuje sie nauczyyc pythona, to jest moj pierwsy projekt")
+def dodawanie():
+    a=float(input("podaj pierwsza liczbe dodawania"))
+    b=float(input("podaj druga liczbe dodawania"))
+    print(a+b)
+def ciagpoteng():
+    y=int(input("podaj ile kolejnych poteg liczb naturalnych mam wypisac"))
+    for i in range(1, y+1):
+        print(i**2)
+def literowanie():
+    slowo=input("podaj słowo do przelitrowania")
+    for litera in slowo:
+        print(litera)
+        
+
+powitanie()
+dodawanie()
+ciagpoteng()
+literowanie()
+    
