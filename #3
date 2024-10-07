@@ -1,0 +1,32 @@
+cordinates=(4, 5)# mie da sie tego zmienic w przeciwienstwie do listy
+# cordinates[1]=10 to bedzie error, tak da sie zrboic w listach, zazwycxzaj uzywa sie list
+print(cordinates[1])
+def say_hi(name):
+    print("hello " + name)
+say_hi("mike")
+def cube(num):
+   return num*num*num#  #return jest potrzebne
+   #w funkcji po return konczy sie funkcja, wiec wszystko co było by po niej nie dziala
+print(cube(3))
+is_male=True
+is_tall=True 
+if is_male or is_tall:#one of both needs to be true
+    print("you are a male or tall or both")
+else:
+    print("you are not a male and not tall")
+if is_male and is_tall:#both needs to be true
+    print("you are a ...")
+elif is_male and not(is_tall):
+    print("you are a short king")
+elif not(is_male) and is_tall:
+    prin("you are not a male but tall")
+
+else:
+    print("you are not a male and not a tall")
+def max_num(num1, num2, num3):
+    if num1>=num2 and num1>=num3:  # == rowna sie, != nie rowna sie
+        return num1
+    elif num2>=num1 and num2>=num3:
+        return num2
+    else:
+        return num3
