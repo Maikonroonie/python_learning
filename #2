@@ -1,0 +1,41 @@
+phrase="essa zimoeczki"
+print(len(phrase))#len to leanght liczy ilosc litter phrase'aprint(len(phrase))
+print(phrase[0])#wwypisuje 0 litere wyrazu
+print(phrase.index("a"))#wypisze na którym miejscu jest litera a 
+print(phrase.replace("essa", "witam"))#zamienia essa na witam
+#math
+print(-234.5)
+print(58+563.5)
+print(3*4+5)
+print(10%3)#modulo czyli reszta z dzielenia 
+my_num=5
+print(str(my_num) + " is my favourite number")
+x=-6
+print(abs(x))#wartość bezwzgledna
+print(pow(3, 2))# 3 do potegi 2
+print(max(4, 6))# wybiera wieksza z tych podancyh analogicznie z min
+print(round(4.6))#zaokraglenie
+from math import *# allows to do more
+print(floor(3.6))
+print(ceil(4.3))
+print(sqrt(36))
+imie=input("podaj imie ")
+print("twoje imie to " + str(imie))
+#listy:)
+list=["jeden", "dwa", "trzy", 4, 5]
+print(list[3])#3 elemetn zostanie wypisany(4 element)
+print(list[-1])#ostatmi elenetmt listy
+print(list[1:4])#od 1 do 4 ale bez 4
+numbers=[2, 4, 6, 8, 10, 12]
+# numbers.extend(list) 
+print(numbers)
+list.append("cwel")
+list.insert(1, "krowa")
+list.remove("jeden")
+# list.clear() czyscin liste
+list.pop() #usuwa osattni element listy
+print(list.index("dwa"))#printuje dwa jesli jest
+print(list.count("krowa"))
+print(numbers.sort())# kolejnos alfabetyczna ale w liscie nie moze byc stringow i intow jednoczesnie
+list.reverse()
+lista2=list.copy()#kopiuje liste
