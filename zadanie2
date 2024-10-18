@@ -1,0 +1,12 @@
+def funkcja():
+    a=1
+    b=1
+    print("0")
+    print(a)
+    print(b)
+    while(a<10**8):
+        a=a+b
+        b=a-b
+        if(a<10**8):
+            print(a)
+funkcja()
