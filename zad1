@@ -1,0 +1,12 @@
+from math import sqrt
+liczba=int(input("podaj n: "))
+a=3
+b=4
+c=int(sqrt(a**2+b**2))
+while(c < liczba):
+    print(a,b,c)
+    a=a+3
+    b=b+4
+    c=int(sqrt(a**2+b**2))
+print("to wszystkie trojkoaty spelniajace warunki zadania")
+
