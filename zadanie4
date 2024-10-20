@@ -1,0 +1,20 @@
+import sys
+a, b=0, 1
+c, d =0, 1
+suma=0
+n=int(input("podaj sume"))
+for i in range(n):
+  #  c, d = d, c+d
+    a,b=b,a+b
+
+    for x in range(n):
+        suma+=a
+        a,b=b,a+b
+        if suma==n:
+            print("istnieje taki ciąg")
+            sys.exit()
+print("nie istnieje taki ciąg")
+        
+    
+
+
