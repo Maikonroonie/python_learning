@@ -1,0 +1,9 @@
+import sys
+from math import sqrt
+#Zadanie 10. Proszę napisać program sprawdzający czy zadana liczba jest pierwszą
+n=int(input("podaj n: "))
+for i in range(2, int(n/2)):
+    if n%i==0:
+        print("n to nie jest liczba pierwsza")
+        sys.exit()
+print("tak n to liczba pierwsza")
