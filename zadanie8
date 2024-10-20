@@ -1,0 +1,28 @@
+
+import math
+
+def funkcja(x):
+    return x**x - 2024 
+
+def bisekcja(f, a, b, epsilon=1e-10):
+    if f(a) * f(b) >= 0:
+        raise ValueError("Funkcja musi mieć różne znaki na końcach przedziału!")
+    
+    while (b - a) / 2 > epsilon:
+        c = (a + b) / 2  
+        if f(c) == 0:
+            return c
+        elif f(a) * f(c) < 0:
+            b = c  
+        else:
+            a = c  
+    
+    return (a + b) / 2 
+
+
+a = 4.0
+b = 5.0
+
+rozwiązanie = (bisekcja(funkcja, a, b))
+print("Rozwiązanie równania x^x = 2024 to:", end=" " )
+print(rozwiązanie)
