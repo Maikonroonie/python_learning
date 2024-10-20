@@ -1,0 +1,8 @@
+acu=int(input("podaj dokladnosc"))
+a=int(input("podaj a: "))
+x0=1
+xk=1
+for i in range(acu):
+    xk= (2*xk**3+a)/(3*xk**2)
+    x0=xk
+print(xk)
