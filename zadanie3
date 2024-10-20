@@ -1,0 +1,29 @@
+x=0
+y=1
+a, b = 0, 1
+print("sd")
+flag=True
+while flag:
+    while a <=2024:
+        if a==2024:
+            print(x, y)
+            flag=False
+            break
+        else:
+            a, b = b, a+b
+    a=x
+    b=y
+    if a%2==0 and a<b:
+        a+=1
+        x+=1
+    elif a%2!=0 and b%2==0:
+        a+=1
+        x+=1
+    elif b%2==0 and a<b:
+        a+=1
+        x+=1
+    else:
+        b+=1
+        y+=1
+        
+    
