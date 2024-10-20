@@ -1,0 +1,8 @@
+#Zadanie 6. Proszę napisać program wyznaczający pierwiastek kwadratowy ze wzoru Newtona
+acu=int(input("podaj dokladnosc"))
+x0=1
+xk=1
+for i in range(acu):
+    xk= x0-(xk**2-2)/(2*xk)
+    x0=xk
+print(xk)
