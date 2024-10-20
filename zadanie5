@@ -1,0 +1,10 @@
+N=int(input("podaj liczbe naturalną n: "))
+suma=0
+n=0
+i=1
+while suma<=N:
+    suma+=i
+    i+=2
+    n+=1
+print(n-1)
+
