@@ -1,0 +1,15 @@
+#Zadanie 12. Proszę napisać program wypisujący rozkład liczby na czynniki pierwsze
+n=int(input("podaj n: "))
+x=n
+a=2
+flag=True
+while flag:
+    if x%a==0 and x!=a:
+        x=x/a
+        print(a)
+    elif x==a :
+        print(a)
+        flag=False
+    else:
+        a+=1
+    
