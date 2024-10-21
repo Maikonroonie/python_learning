@@ -1,0 +1,24 @@
+def liczba1(n):
+    suma1=0
+    for i in range(1,int((n/2)+1)):
+      if n%i==0:
+       # print(i)
+        suma1+=i
+   # print(n)
+    #suma1+=n
+   # print(suma1)
+    return suma1
+def liczba2(a):
+    suma2=0
+    for x in range(1,int((a/2)+1)):
+      if a%x==0:
+       # print(x)
+        suma2+=x
+   # print(a)
+    #suma2+=a
+   # print(suma2)
+    return suma2
+for h in range(1, 1000000):
+   for g in range(1, 1000000):
+      if (liczba1(h)==g and liczba2(g)==h and g!=h):
+         print(f"{h}  i  {g},  to liczby zaorzyjaznione" )
