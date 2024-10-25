@@ -1,0 +1,25 @@
+def fib(n):
+    lista=[0,1]
+    while True:
+        a=lista[-1]+lista[-2]
+        if a>n:
+            break
+        lista.append(a)
+    return lista
+def czy_iloczyn(n):
+    x=fib(n)
+    for i in range(len(x)):
+        for j in range(len(x)):
+            y=x[i]*x[j]
+            if y==n:
+                return True, (x[i], x[j])
+            if y>n:
+                break
+    return False, None
+
+n = int(input("Podaj liczbę naturalną: "))
+result, pair = czy_iloczyn(n)
+if result:
+    print(f"Liczba {n} jest iloczynem wyrazów Fibonacciego: {pair[0]} i {pair[1]}.")
+else:
+    print(f"Liczba {n} nie jest iloczynem żadnych dwóch wyrazów ciągu Fibonacciego.")
