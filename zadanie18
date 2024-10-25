@@ -1,0 +1,10 @@
+import math
+def pi(ilosc):
+    iloczyn=math.sqrt(0.5)
+    x=math.sqrt(0.5)
+    for i in range(ilosc):
+        x=math.sqrt(0.5 + 0.5*x)
+        iloczyn*=x
+    return iloczyn
+ilosc=int(input("podaj ilosc"))
+print((pi(ilosc)/2)**(-1))
