@@ -1,0 +1,7 @@
+def cf(a, b):      
+    for i in range(100):
+        a,b=b,a+b
+        c=(b/a)
+    return c
+x=int(input("podaj pierwsze elementy ciagu"))
+print(cf(x,x))
