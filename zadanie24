@@ -1,0 +1,34 @@
+import math
+def czy_pierwsza(a):
+    x=True
+    for i in range(2, int(a/2)):
+        if a<2:
+            x=False
+            break
+        if a==2 or a==3:
+            x=True
+            break
+        if a>=4:
+            if a%i==0:
+                x=False
+                break
+    return x
+def czy_palindrom(a):
+    return str(a)==str(a)[::-1]
+def czy_pierwsza_after(a):
+    s=str(a)
+    while len(s)>1:
+        s=s[1:-1]
+        if s and not czy_pierwsza(int(s)):
+            return False
+    return True
+def naraz(N):
+    results=[]
+    for num in range(2,N):
+        if czy_pierwsza(num) and czy_palindrom(num) and czy_pierwsza_after(num):
+            results.append(num)
+    return results
+N=int(input("podaj wartosc N: "))
+print(naraz(N))
+
+            
