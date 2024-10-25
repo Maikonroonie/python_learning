@@ -1,0 +1,13 @@
+import math
+def agm(a, b, tolerance=1e-10):
+    A_n = a
+    B_n = b
+    while abs(A_n - B_n) > tolerance:
+        A_next = math.sqrt(A_n * B_n)
+        B_next = (A_n + B_n) / 2.0      
+        A_n, B_n = A_next, B_next
+    return A_n
+a = float(input("Podaj pierwszą liczbę: "))
+b = float(input("Podaj drugą liczbę: "))
+agm_result = agm(a, b)
+print(f"Średnia arytmetyczno-geometryczna liczb {a} i {b} wynosi: {agm_result}")    
