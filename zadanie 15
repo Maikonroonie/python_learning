@@ -1,0 +1,26 @@
+'''e=int(input("podaj pierwsza liczbe: "))
+f=int(input("podaj druga liczbe: "))
+g=int(input("podaj trzecia liczbe: "))
+nwd=0
+def nwd2(a, b):
+    flag=True
+    c=(max(a, b))/2
+    while flag:
+        if a%c==0 and b%c==0:
+            flag=False
+        else:
+            c-=1
+    return c
+h=int(nwd2(e, f))
+print(nwd2(g, h))
+'''
+def nwd(a, b):
+    while b:
+        a, b=b, a%b
+    return a
+e=int(input("podaj pierwsza liczbe: "))
+f=int(input("podaj druga liczbe: "))
+g=int(input("podaj trzecia liczbe: "))
+print(nwd((nwd(e,f)), g))
+            
+
