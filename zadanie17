@@ -1,0 +1,10 @@
+import math
+limit=int(input("podaj limit szergu"))
+x=float(input("podaj x w radianach"))
+def cosx(x, limit):
+    cos=0
+    for n in range(limit):
+        a=((-1)**(n)*x**(2*n))/math.factorial(2*n)
+        cos+=a
+    return cos
+print(cosx(x, limit))
