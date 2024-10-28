@@ -1,0 +1,26 @@
+def liczba1(n):
+    tab=[]
+    while n:
+        tab.append(n%10)
+        n=n//10
+    tab.sort()
+    return tab
+def liczba2(n):
+    dlg=len(str(n))
+    tab=[0 for _ in range(dlg)]
+    for i in range(dlg):
+        tab[i]=n%10
+        n=n//10
+    tab.sort()
+    return tab
+
+n=int(input("podaj liczbe 1: "))
+x=int(input("podaj liczbe 2: "))
+print(liczba1(n))
+print(liczba2(x))
+if liczba1(n)==liczba2(x):
+    print("true")
+else:
+    print("false")
+
+
