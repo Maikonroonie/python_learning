@@ -1,0 +1,38 @@
+def zamna2(n):
+    tab=[]
+    while n:
+        tab.append(n%2)
+        n=n//2
+    tab.reverse()
+    return tab
+def zamna8(n):
+    tab=[]
+    while n:
+        tab.append(n%8)
+        n=n//8
+    tab.reverse()
+    return tab
+def zamna16(n):
+    tab=[]
+    while n:
+        tab.append(n%16)
+        n=n//16
+    tab.reverse()
+    for i in range(len(tab)):
+        if tab[i]==10:
+            tab[i]="A"
+        if tab[i]==11:
+            tab[i]="B"
+        if tab[i]==12:
+            tab[i]="C"
+        if tab[i]==13:
+            tab[i]="D"
+        if tab[i]==14:
+            tab[i]="E"
+        if tab[i]==15:
+            tab[i]="F"
+    return tab
+n=int(input("podaj liczbe w systemie dziesietnym: "))
+print(zamna2(n))
+print(zamna8(n))
+print(zamna16(n))
