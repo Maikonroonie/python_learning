@@ -1,4 +1,4 @@
-import math
+'''import math
 def sito(n):
     tab=[i for i in range(2,n+1)]
     for i in range(2, math.isqrt(n)+1):
@@ -8,6 +8,18 @@ def sito(n):
     return tab
 n=int(input("podaj n: "))
 print(sito(n))
+'''
+def sito(N):
+    sito=[True for i in range(N)]
+    for i in range(2,N):
+        if sito[i]:
+            print(i, "jest liczba pierwszą")
+            for j in range(2*i, N, i):
+                sito[j]=False
+    
+sito(100)
+
+
 
 
 
