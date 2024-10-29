@@ -16,8 +16,9 @@ def sito(N):
             print(i, "jest liczba pierwszą")
             for j in range(2*i, N, i):
                 sito[j]=False
+    return [i for i in range(2,N) if sito[i]]
     
-sito(100)
+print(sito(100))
 
 
 
