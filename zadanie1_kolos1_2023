@@ -1,0 +1,38 @@
+def czy_zgodne(a,b):
+    tab_a=[0 for _ in range(a+1)]
+    tab_b=[0 for _ in range(b+1)]
+    k=2
+    while a>1:
+        if a%k==0:
+            tab_a[k]=1
+        while a%k==0:
+            a=a//k
+        k+=1
+    l=2
+    while b>1:
+        if b%l==0:
+            tab_b[l]=1
+        while b%l==0:
+            b=b//l
+        l+=1
+    if len(tab_a)>len(tab_b):
+        for i in range(len(tab_b),len(tab_a)):
+            if tab_a[i]==1: return False
+    elif len(tab_b)<len(tab_a):
+        for i in range(len(tab_a),len(tab_b)):
+            if tab_a[i]==1: return False
+    else:
+        for i in range(len(tab_a)):
+            if tab_a[i]!=tab_b[i]: return False
+    return True
+#print(czy_zgodne(225,4))
+def zgodne(T):
+    licznik=0
+    for i in range(len(T)-2):
+        if czy_zgodne(T[i],T[i+1]) or czy_zgodne(T[i], T[i+2]):
+            licznik+=1
+    for i in range(-1,2,):
+        if czy_zgodne(T[i],T[i-1]) or czy_zgodne(T[i], T[i-2]):
+            licznik+=1
+    return licznik 
+print(zgodne([2, 3, 4, 5, 7, 6, 23, 24, 12, 13, 14, 15, 16, 45]))
