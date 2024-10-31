@@ -1,0 +1,17 @@
+def czy_ciag_geom(a):
+    if a<100:
+        return True
+    b=a%10
+    a=a//10
+    c=a%10
+    x=c/b
+    q=c/b
+    while a>0 and q==x:
+        b=a%10
+        a=a//10
+        c=a%10
+        q=c/b
+        if a==0:
+            return True
+    return False
+print(czy_ciag_geom(33333))
