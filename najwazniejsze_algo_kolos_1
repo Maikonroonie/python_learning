@@ -1,0 +1,108 @@
+import math
+#rozklad liczby na czyniki pierwsze
+def rozklad(a):
+    b=a
+    tab=[0 for _ in range(a+1)]
+    k=2
+    while a>1:
+        if a%k==0:
+            tab[k]=1
+        while a%k==0:
+            a=a//k
+        k+=1
+    return [i for i in range(b+1) if tab[i]==1 ]
+print(rozklad(10))
+#sito do znajdowania liczp pierwszych mnnijeszych od n
+def sito(n):
+    sito=[1 for i in range(n)]
+    for i in range(2,n):
+        for j in range(2*i,n,i):
+            sito[j]=0
+    return [i for i in range(2,n) if sito[i]==1]
+print(sito(100))
+#ciag fibonaciego mniejszy od n
+def fib(n):
+    fib=[0 for i in range(n)]
+    a,b=1,1
+    x=0
+    while a<n:
+        fib[x]=a
+        a, b = b, a+b
+        x+=1
+    return[fib[i] for i in range(n) if fib[i]!=0]
+print(fib(100))
+#nwd a i b
+def nwd(a,b):
+    while b:
+        a,b=b,a%b
+    return a
+print(nwd(12,207))
+#nww a i b nww=(a*b)/nwd(a,b)
+def nww(a,b):
+    return (a*b)/nwd(a,b)
+print(nww(12,207))
+#czy liczba jest pierwsza
+def czy_pierwsza(a):
+    if a==2:
+        return True
+    if a<2 or a%2==0:
+        return False
+    for i in range(3, math.isqrt(a)+1,2):
+        if a%i==0:
+            return False
+    return True
+print(czy_pierwsza(78991198999))
+# dodwanie piemne
+def dod_pisemne(tab1, tab2):
+    l1 = len(tab1)
+    l2 = len(tab2)
+    lmax = max(l1, l2)
+    tab3 = [0 for i in range(lmax+1)]
+    przes = 0   
+    for i in range(1, lmax + 1):
+        a = tab1[-i] if i <= l1 else 0
+        b = tab2[-i] if i <= l2 else 0
+        suma = a + b + przes
+        tab3[-i] = suma % 10
+        przes = suma // 10
+    if przes > 0:
+        tab3[0] = przes
+    else:
+        tab3 = tab3[1:]
+    return tab3
+print(dod_pisemne([9, 9, 3, 4, 5, 6], [9, 9, 9, 4, 5, 7, 8]))  
+#dzielenie pisemne
+def dzielenie_pisemne(tab_licznik, tab_dzielnik):
+    l_licznik = len(tab_licznik)
+    l_dzielnik = len(tab_dzielnik)
+
+    if l_dzielnik == 0:
+        raise ValueError("Dzielnik nie może być zerem.")
+    if l_licznik < l_dzielnik:
+        return [0]  # Wynik jest 0, jeśli licznik jest mniejszy od dzielnika.
+
+    # Inicjalizowanie zmiennych
+    tab_wynik = []
+    reszta = 0
+
+    # Iteracja przez każdą cyfrę licznika
+    for i in range(l_licznik):
+        # Pobieranie bieżącej cyfry
+        cyfra = tab_licznik[i] + reszta * 10  # Dodajemy resztę do bieżącej cyfry (przesunięcie w prawo)
+        if cyfra < tab_dzielnik[0]:  # Jeśli cyfra jest mniejsza niż dzielnik
+            tab_wynik.append(0)
+            reszta = cyfra  # Przechowujemy resztę
+        else:
+            # Dzielenie
+            wynik_cyfry = cyfra // tab_dzielnik[0]
+            tab_wynik.append(wynik_cyfry)
+            reszta = cyfra % tab_dzielnik[0]  # Ustalanie nowej reszty
+
+    return tab_wynik
+
+# Przykład
+licznik = [4, 5, 6]  # Liczba 456
+dzielnik = [2]       # Liczba 2
+print(dzielenie_pisemne(licznik, dzielnik))  # Wynik powinien być [2, 2, 8] (czyli 228)
+
+
