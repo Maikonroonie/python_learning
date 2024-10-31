@@ -1,0 +1,14 @@
+def czy_cg_ros(a):
+    c=2
+    b=1
+    while a>0 and c>b:
+        c=a%10
+        a=a//10
+        b=a%10      
+        a=a//10
+        if a==0:
+            return True
+    return False
+print(czy_cg_ros(1234))
+  
+
