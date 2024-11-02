@@ -1,0 +1,22 @@
+def różnoecyfry(a,b,s):
+    tab = [False for _ in range(s)]
+
+    while a != 0:
+        tab[ a % s ] = True
+        a = a // s
+
+    while b != 0:
+        if tab[b % s] : return False
+        b = b // s
+
+    return True
+
+def main(a,b):
+    for s in range(2, 17):
+        if różnoecyfry(a, b, s):
+            return s
+
+
+
+
+print(main(123,522))
